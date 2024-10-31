@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0; /* Light gray background color */
+            font-family: Arial, sans-serif; /* Specify a common font family */
+        }
+        .result-container {
+            text-align: center;
+            background-color: #ffffff; /* White background for result container */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+        }
+        .result-container h1 {
+            font-size: 2em; /* Increase font size */
+            color: #333333; /* Dark gray text color */
+        }
+        .result-container p {
+            font-size: 1.2em; /* Increase font size */
+            margin: 10px 0;
+        }
+        .result-container a {
+            font-size: 1.2em; /* Increase font size */
+            color: #4CAF50; /* Green link color */
+            text-decoration: none;
+            margin-top: 20px;
+            display: inline-block;
+            transition: color 0.3s ease;
+        }
+        .result-container a:hover {
+            color: #45a049; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="result-container">
+        <h1>Review Sentiment Prediction</h1>
+        <p><strong>Review:</strong> {{ review }}</p>
+        <p><strong>Sentiment:</strong> {{ sentiment }}</p>
+        <p><strong>Sentiment Score:</strong> {{ sentiment_score }}</p>
+        <a href="/">Back to Home</a>
+    </div>
+</body>
+</html>

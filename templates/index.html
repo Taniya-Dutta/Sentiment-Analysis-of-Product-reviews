@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis</title>
+    <style>
+        body {
+            background-image: url("/static/sent.png"); /* Path to your background image */
+            background-size: cover; /* Cover the entire background */
+            background-repeat: no-repeat; /* Prevent repeating */
+            font-family: Arial, sans-serif; /* Example: Set font family */
+            text-align: center; /* Center align text */
+            padding: 20px; /* Add padding for content */
+        }
+        .container {
+            max-width: 600px; /* Adjust maximum width of content */
+            margin: 0 auto; /* Center align container */
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for container */
+            padding: 20px; /* Add padding for content within container */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for container */
+        }
+        h1 {
+            font-size: 28px; /* Adjust heading font size */
+            color: #333333; /* Dark color for headings */
+        }
+        p {
+            font-size: 18px; /* Adjust paragraph font size */
+            color: #666666; /* Medium color for text */
+            line-height: 1.6; /* Adjust line height */
+        }
+        .form-group {
+            text-align: left; /* Align form group elements to the left */
+            margin-bottom: 20px; /* Add space between form elements */
+        }
+        .form-group label {
+            font-weight: bold; /* Bold labels */
+        }
+        .form-group textarea {
+            width: 100%; /* Full width textarea */
+            height: 150px; /* Set height of textarea */
+            padding: 10px; /* Padding for textarea */
+            font-size: 16px; /* Adjust font size of textarea */
+            border: 1px solid #cccccc; /* Light border color */
+            border-radius: 4px; /* Rounded corners for textarea */
+            resize: vertical; /* Allow vertical resizing */
+        }
+        .btn {
+            background-color: #007bff; /* Blue button color */
+            color: #ffffff; /* White text color */
+            border: none; /* No border */
+            padding: 10px 20px; /* Padding for button */
+            font-size: 16px; /* Button font size */
+            cursor: pointer; /* Pointer cursor */
+            border-radius: 4px; /* Rounded corners */
+        }
+        .btn:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+        .result {
+            margin-top: 20px; /* Space above result section */
+        }
+        .sentiment-label {
+            font-size: 24px; /* Adjust font size for sentiment label */
+            margin-bottom: 10px; /* Space below sentiment label */
+        }
+        .sentiment-score {
+            font-size: 20px; /* Adjust font size for sentiment score */
+            color: #28a745; /* Green color for positive sentiment */
+            font-weight: bold; /* Bold sentiment score */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sentiment Analysis</h1>
+        <p>Enter your text below to predict sentiment:</p>
+
+        <form action="/predict" method="post" class="form-group">
+            <label for="review">Review:</label><br>
+            <textarea id="review" name="review" placeholder="Enter your review..." required></textarea><br><br>
+            <button type="submit" class="btn">Predict Sentiment</button>
+        </form>
+
+        {% if sentiment %}
+        <div class="result">
+            <p class="sentiment-label">Predicted Sentiment:</p>
+            <p class="sentiment-score">{{ sentiment }}</p>
+            <p class="sentiment-label">Sentiment Score:</p>
+            <p class="sentiment-score">{{ sentiment_score }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
