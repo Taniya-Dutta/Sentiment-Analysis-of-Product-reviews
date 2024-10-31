@@ -17,7 +17,7 @@ h5py==3.11.0
 idna==3.7
 itsdangerous==2.2.0
 Jinja2==3.1.4
-keras==3.6.0
+keras==2.13.1  # Updated to a compatible version
 Keras-Applications==1.0.8
 Keras-Preprocessing==1.1.2
 libclang==18.1.1
@@ -45,7 +45,7 @@ rich==13.7.1
 rsa==4.9
 scipy==1.14.1
 six==1.16.0
-tensorboard==2.13.0  # Update to match TensorFlow version
+tensorboard==2.13.0  # Updated to match TensorFlow version
 tensorflow==2.13.0   # Updated TensorFlow version
 tensorflow-estimator==2.13.0  # Update to match TensorFlow version
 tensorflow-io-gcs-filesystem==0.31.0
@@ -55,4 +55,5 @@ tzdata==2024.2
 urllib3==2.2.2
 Werkzeug==3.0.3
 wrapt==1.14.1
+
 
